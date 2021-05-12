@@ -10,5 +10,13 @@ module.exports = {
     title: 'Gatsby Bootcamp',
     author: 'Vinicius Granado',
   },
-  plugins: [`gatsby-plugin-sass`,],
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
+      }
+    }],
 };
