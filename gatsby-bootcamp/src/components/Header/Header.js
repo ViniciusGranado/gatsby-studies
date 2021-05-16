@@ -1,7 +1,7 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
-import * as headerStyles from "./Header.module.scss"
+import * as headerStyles from "./Header.module.scss";
 
 export const Header = () => {
   const data = useStaticQuery(graphql`
@@ -62,5 +62,5 @@ export const Header = () => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
