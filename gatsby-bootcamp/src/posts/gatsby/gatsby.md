@@ -5,7 +5,7 @@ date: "2021-05-12"
 
 I'm following this bootcamp to learn Gatsby!
 
-![Grass](./grass.jpg)
+![Grass](.//grass.jpg)
 
 ## Topics Covered
 
