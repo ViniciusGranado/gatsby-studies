@@ -3,24 +3,25 @@ import { graphql } from "gatsby";
 import { Layout } from "../components/Layout/Layout";
 
 export const query = graphql`
-  query($slug: String) {
-    contentfulBlogPost(slug: {eq: $slug}) {
-      titlepublishedDate
-      content {
-        raw
-        references {
-          __typename
-          contentful_id
-          title
-          fluid(maxWidth: 1000) {
-            src
-            srcset
-          }
+    query($slug: String!) {
+        contentfulBlogPost(slug: { eq: $slug }) {
+            title
+            publishedDate(formatString: "MMMM Do, YYYY")
+            content {
+                raw
+                references {
+                    __typename
+                    contentful_id
+                    title
+                    fluid(maxWidth: 1000) {
+                        src
+                        srcSet
+                    }
+                }
+            }
         }
-      }
     }
-  }
-`;
+`
 
 const Blog = props => {
   return (
