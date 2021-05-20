@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Layout } from "../components/Layout/Layout";
+import Head from "../components/Head/Head";
 
 export const query = graphql`
   query($slug: String!) {
@@ -26,7 +27,7 @@ export const query = graphql`
 
 const options = {
   renderNode: {
-    "embedded-asset-block": node => {
+    "embedded-asset-block": (node) => {
       return (
         <img src={node.data.target.fluid.src} alt={node.data.target.title} />
       );
@@ -34,9 +35,11 @@ const options = {
   },
 };
 
-const Blog = props => {
+const Blog = (props) => {
   return (
     <Layout>
+      <Head title={props.data.contentfulBlogPost.title} />
+
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
 
